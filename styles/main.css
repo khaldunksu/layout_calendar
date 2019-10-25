@@ -151,25 +151,25 @@ html {
   content: "31";
   line-height: 100px; }
 
-.calendar .calendar-mon {
+.calendar-mon {
   content: "mon"; }
 
-.calendar .calendar-tue {
+.calendar-tue {
   content: "tue"; }
 
-.calendar .calendar-wed {
+.calendar-wed {
   content: "wed"; }
 
-.calendar .calendar-thu {
+.calendar-thu {
   content: "thu"; }
 
-.calendar .calendar-fri {
+.calendar-fri {
   content: "fri"; }
 
-.calendar .calendar-sat {
+.calendar-sat {
   content: "sat"; }
 
-.calendar .calendar-sun {
+.calendar-sun {
   content: "sun"; }
 
 /*# sourceMappingURL=main.css.map */
