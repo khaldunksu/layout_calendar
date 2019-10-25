@@ -24,8 +24,8 @@ html {
     margin: 1px; }
   .calendar div:hover {
     background-color: pink;
-    -webkit-transform: translate(0px, -20px);
-            transform: translate(0px, -20px); }
+    -webkit-transform: translate(0, -20px);
+            transform: translate(0, -20px); }
 
 .calendar > div:nth-child(1)::after {
   content: "1";
