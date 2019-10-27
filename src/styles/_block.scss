@@ -7,29 +7,39 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 707px;
+  width: 808px;
 
   div {
     width: 100px;
     height: 100px;
     background-color: #eee;
     border: 1px solid black;
-    margin: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      background-color: pink;
+      transform: translate( 0, -20px);
+      cursor: pointer;
+    }
 
   }
-  div:hover {
-    background-color: pink;
-    transform: translate( 0, -20px);
+  @for $i from 1 through 31 {
+    & {
+      div:nth-child(#{$i})::after {
+        content: "#{$i}";
+      }
+    }
   }
-
-}
-
-@for $i from 1 through 31 {
-  .calendar > div:nth-child(#{$i})::after {
-    content: "#{$i}";
-    line-height: 100px;
+  @for $i from 28 through 30 {
+    &-#{$i} {
+      div:nth-child(#{$i}) ~ div {
+        visibility: hidden;
+      }
+    }
   }
-
 }
 
 $days: (
@@ -44,6 +54,8 @@ $days: (
 
 @each $i, $day in $days {
   .calendar-#{$day} {
-    content: "#{$day}";
+    div:first-child {
+      margin-left: (100px + 1px) * $i - (100px - 1px);
+    }
   }
 }
