@@ -1,43 +1,45 @@
-html {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
-}
+$size: 100px;
+$space: 1px;
 
 .calendar {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 808px;
+  margin: 0 auto;
+  width: ($size + $space) * 7;
 
-  div {
-    width: 100px;
-    height: 100px;
+  & > div {
+    box-sizing: border-box;
+    width: $size;
+    height: $size;
     background-color: #eee;
     border: 1px solid black;
-    margin-left: 1px;
-    margin-right: 1px;
+    margin: 0 $space $space 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 3s ease;
+
     &:hover {
       background-color: pink;
       transform: translate( 0, -20px);
       cursor: pointer;
     }
-
   }
-  @for $i from 1 through 31 {
-    & {
-      div:nth-child(#{$i})::after {
-        content: "#{$i}";
-      }
+}
+
+@for $i from 1 through 31 {
+  .calendar {
+    div:nth-child(#{$i})::after {
+      content: "#{$i}";
     }
   }
-  @for $i from 28 through 30 {
-    &-#{$i} {
-      div:nth-child(#{$i}) ~ div {
-        visibility: hidden;
-      }
+}
+
+@for $i from 28 through 31 {
+  .calendar-#{$i} {
+    div:nth-child(#{$i}) ~ div {
+      display: none;
     }
   }
 }
@@ -55,7 +57,7 @@ $days: (
 @each $i, $day in $days {
   .calendar-#{$day} {
     div:first-child {
-      margin-left: (100px + 1px) * $i - (100px - 1px);
+      margin-left: ($size + $space) * $i - ($size + $space);
     }
   }
 }
