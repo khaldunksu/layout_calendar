@@ -5,6 +5,10 @@ html {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px; }
 
+h1 {
+  visibility: hidden;
+  font-size: 0; }
+
 .calendar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15,14 +19,16 @@ html {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 808px; }
-  .calendar div {
+  margin: 0 auto;
+  width: 707px; }
+  .calendar > div {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     width: 100px;
     height: 100px;
     background-color: #eee;
     border: 1px solid black;
-    margin-left: 1px;
-    margin-right: 1px;
+    margin: 0 1px 1px 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -31,100 +37,141 @@ html {
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
-    .calendar div:hover {
+            align-items: center;
+    -webkit-transition: -webkit-transform 3s ease;
+    transition: -webkit-transform 3s ease;
+    transition: transform 3s ease;
+    transition: transform 3s ease, -webkit-transform 3s ease; }
+    .calendar > div:hover {
       background-color: pink;
       -webkit-transform: translate(0, -20px);
               transform: translate(0, -20px);
       cursor: pointer; }
-  .calendar div:nth-child(1)::after {
-    content: "1"; }
-  .calendar div:nth-child(2)::after {
-    content: "2"; }
-  .calendar div:nth-child(3)::after {
-    content: "3"; }
-  .calendar div:nth-child(4)::after {
-    content: "4"; }
-  .calendar div:nth-child(5)::after {
-    content: "5"; }
-  .calendar div:nth-child(6)::after {
-    content: "6"; }
-  .calendar div:nth-child(7)::after {
-    content: "7"; }
-  .calendar div:nth-child(8)::after {
-    content: "8"; }
-  .calendar div:nth-child(9)::after {
-    content: "9"; }
-  .calendar div:nth-child(10)::after {
-    content: "10"; }
-  .calendar div:nth-child(11)::after {
-    content: "11"; }
-  .calendar div:nth-child(12)::after {
-    content: "12"; }
-  .calendar div:nth-child(13)::after {
-    content: "13"; }
-  .calendar div:nth-child(14)::after {
-    content: "14"; }
-  .calendar div:nth-child(15)::after {
-    content: "15"; }
-  .calendar div:nth-child(16)::after {
-    content: "16"; }
-  .calendar div:nth-child(17)::after {
-    content: "17"; }
-  .calendar div:nth-child(18)::after {
-    content: "18"; }
-  .calendar div:nth-child(19)::after {
-    content: "19"; }
-  .calendar div:nth-child(20)::after {
-    content: "20"; }
-  .calendar div:nth-child(21)::after {
-    content: "21"; }
-  .calendar div:nth-child(22)::after {
-    content: "22"; }
-  .calendar div:nth-child(23)::after {
-    content: "23"; }
-  .calendar div:nth-child(24)::after {
-    content: "24"; }
-  .calendar div:nth-child(25)::after {
-    content: "25"; }
-  .calendar div:nth-child(26)::after {
-    content: "26"; }
-  .calendar div:nth-child(27)::after {
-    content: "27"; }
-  .calendar div:nth-child(28)::after {
-    content: "28"; }
-  .calendar div:nth-child(29)::after {
-    content: "29"; }
-  .calendar div:nth-child(30)::after {
-    content: "30"; }
-  .calendar div:nth-child(31)::after {
-    content: "31"; }
-  .calendar-28 div:nth-child(28) ~ div {
-    visibility: hidden; }
-  .calendar-29 div:nth-child(29) ~ div {
-    visibility: hidden; }
-  .calendar-30 div:nth-child(30) ~ div {
-    visibility: hidden; }
+
+.calendar div:nth-child(1)::after {
+  content: "1"; }
+
+.calendar div:nth-child(2)::after {
+  content: "2"; }
+
+.calendar div:nth-child(3)::after {
+  content: "3"; }
+
+.calendar div:nth-child(4)::after {
+  content: "4"; }
+
+.calendar div:nth-child(5)::after {
+  content: "5"; }
+
+.calendar div:nth-child(6)::after {
+  content: "6"; }
+
+.calendar div:nth-child(7)::after {
+  content: "7"; }
+
+.calendar div:nth-child(8)::after {
+  content: "8"; }
+
+.calendar div:nth-child(9)::after {
+  content: "9"; }
+
+.calendar div:nth-child(10)::after {
+  content: "10"; }
+
+.calendar div:nth-child(11)::after {
+  content: "11"; }
+
+.calendar div:nth-child(12)::after {
+  content: "12"; }
+
+.calendar div:nth-child(13)::after {
+  content: "13"; }
+
+.calendar div:nth-child(14)::after {
+  content: "14"; }
+
+.calendar div:nth-child(15)::after {
+  content: "15"; }
+
+.calendar div:nth-child(16)::after {
+  content: "16"; }
+
+.calendar div:nth-child(17)::after {
+  content: "17"; }
+
+.calendar div:nth-child(18)::after {
+  content: "18"; }
+
+.calendar div:nth-child(19)::after {
+  content: "19"; }
+
+.calendar div:nth-child(20)::after {
+  content: "20"; }
+
+.calendar div:nth-child(21)::after {
+  content: "21"; }
+
+.calendar div:nth-child(22)::after {
+  content: "22"; }
+
+.calendar div:nth-child(23)::after {
+  content: "23"; }
+
+.calendar div:nth-child(24)::after {
+  content: "24"; }
+
+.calendar div:nth-child(25)::after {
+  content: "25"; }
+
+.calendar div:nth-child(26)::after {
+  content: "26"; }
+
+.calendar div:nth-child(27)::after {
+  content: "27"; }
+
+.calendar div:nth-child(28)::after {
+  content: "28"; }
+
+.calendar div:nth-child(29)::after {
+  content: "29"; }
+
+.calendar div:nth-child(30)::after {
+  content: "30"; }
+
+.calendar div:nth-child(31)::after {
+  content: "31"; }
+
+.calendar-28 div:nth-child(28) ~ div {
+  display: none; }
+
+.calendar-29 div:nth-child(29) ~ div {
+  display: none; }
+
+.calendar-30 div:nth-child(30) ~ div {
+  display: none; }
+
+.calendar-31 div:nth-child(31) ~ div {
+  display: none; }
 
 .calendar-mon div:first-child {
-  margin-left: 2px; }
+  margin-left: 0px; }
 
 .calendar-tue div:first-child {
-  margin-left: 103px; }
+  margin-left: 101px; }
 
 .calendar-wed div:first-child {
-  margin-left: 204px; }
+  margin-left: 202px; }
 
 .calendar-thu div:first-child {
-  margin-left: 305px; }
+  margin-left: 303px; }
 
 .calendar-fri div:first-child {
-  margin-left: 406px; }
+  margin-left: 404px; }
 
 .calendar-sat div:first-child {
-  margin-left: 507px; }
+  margin-left: 505px; }
 
 .calendar-sun div:first-child {
-  margin-left: 608px; }
+  margin-left: 606px; }
 
 /*# sourceMappingURL=main.css.map */
